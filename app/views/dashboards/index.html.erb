@@ -1,0 +1,50 @@
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+  <h2 class="text-center" style="padding-bottom:20px">Order delivery online from any of your favorite restaurants in the
+    DC area.</h2>
+
+  <div class="form-group">
+    <div class="controls"></div>
+  </div>
+  <div class="container">
+    <%= form_tag search_results_restaurants_path, :method => 'get' do %>
+        <div class="row">
+          <div class="col-md-4">
+            <label class="control-label">Search by:</label>
+            <%= select_tag 'search_by', options_for_select(Constants::SEARCH_BY.collect { |k, v| [v, k] }), class: "form-control" %>
+          </div>
+          <div class="col-md-6">
+            <label class="control-label">Search for:</label>
+            <%= text_field_tag :search_for, params[:search_for], class: "form-control" %>
+          </div>
+          <div class="col-md-2">
+            <label class="control-label">&nbsp;</label>
+            <%= submit_tag "Search", class: 'btn btn-block btn-primary' %>
+          </div>
+        </div>
+    <% end %>
+  </div>
+</div>
+<div class="container">
+  <!-- Example row of columns -->
+  <div class="row">
+    <div class="col-lg-4 col-md-6">
+      <h2>About Us</h2>
+
+      <p>DC Delivery is the leading food delivery service in the DC metro area connecting hungry patrons to their
+        favorite restaurants. &nbsp;We currently deliver directly from 20 restaurants in all four quadrants of the
+        nation's capitol.</p>
+
+      <p><a class="btn btn-default" href="#">View details &raquo;</a></p>
+    </div>
+    <div class="col-lg-4 col-md-6">
+      <h2>Contact Us</h2>
+
+      <p>Any of our helpful customer service representatives would be glad to help you with any inquiries you might
+        have.</p>
+
+      <p><a class="btn btn-default" href="#">View details &raquo;</a></p>
+    </div>
+  </div>
+</div>
+<!-- /container -->

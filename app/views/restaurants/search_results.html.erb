@@ -1,0 +1,19 @@
+<div class="jumbotron">
+  <h3>Search Results:</h3>
+
+  <div class="container">
+    <ul class="list-group">
+      <% if @restaurants.present? %>
+          <% @restaurants.each do |restaurant| %>
+              <li class="list-group-item"><%= restaurant.name %>
+                <span class="badge"><%= link_to 'Show', restaurant %></span>
+              </li>
+          <% end %>
+      <% else %>
+          <li class="list-group-item">
+            No Result found!
+          </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
